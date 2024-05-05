@@ -1,0 +1,33 @@
+name: flutter_application_5
+description: "A new Flutter project."
+publish_to: 'none' # Indica que no estás publicando este proyecto públicamente
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.3.4 <4.0.0' # Asegúrate de que esta versión del SDK sea compatible con tu instalación de Flutter
+
+dependencies:
+  flutter:
+    sdk: flutter
+  cupertino_icons: ^1.0.6 # Iconos de Cupertino
+  http: ^1.2.1 # Para solicitudes HTTP
+  firebase_core: ^2.30.1 # Necesario para inicializar Firebase
+
+  # Aquí puedes agregar otras dependencias relacionadas con Firebase según tus necesidades.
+  # Por ejemplo, para Firestore:
+  # cloud_firestore: ^4.10.0
+  # Para Firebase Auth:
+  # firebase_auth: ^4.7.0
+  # Para Firebase Storage:
+  # firebase_storage: ^11.3.2
+
+dev_dependencies: 
+  flutter_test:
+    sdk: flutter # Paquete para pruebas de Flutter
+  flutter_lints: ^3.0.0 # Paquete para reglas de linting de Flutter
+
+flutter:
+  uses-material-design: true # Habilita el uso del diseño Material Design
+  # Aquí puedes agregar recursos adicionales, como imágenes o fuentes
+  # assets:
+  # - assets/images/
