@@ -1,19 +1,17 @@
 import 'package:flutter/material.dart';
-import 'package:firebase_core/firebase_core.dart'; // Importa Firebase Core
-import 'firebase_options.dart'; // Importa las configuraciones de Firebase generadas por flutterfire configure
+import 'package:firebase_core/firebase_core.dart'; 
+import 'firebase_options.dart'; 
 import 'package:http/http.dart' as http;
 import 'dart:convert';
 
 Future<void> main() async {
-  // Asegúrate de que el framework Flutter esté completamente inicializado
+  
   WidgetsFlutterBinding.ensureInitialized();
 
-  // Inicializa Firebase con las opciones configuradas para la plataforma actual
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
 
-  // Inicia tu aplicación Flutter
   runApp(MyApp());
 }
 
@@ -22,8 +20,8 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Datos de COVID-19',
-      theme: ThemeData(primarySwatch: Colors.blue), // Puedes ajustar el tema
-      home: CovidScreen(), // Pantalla para mostrar datos de COVID-19
+      theme: ThemeData(primarySwatch: Colors.blue), 
+      home: CovidScreen(), 
     );
   }
 }
@@ -34,7 +32,7 @@ class CovidScreen extends StatefulWidget {
 }
 
 class _CovidScreenState extends State<CovidScreen> {
-  int? _positiveCases; // Casos positivos
+  int? _positiveCases; 
   int? _currentHospitalizations; // Hospitalizaciones actuales
   int? _deaths; // Muertes
   int? _recovered; // Casos recuperados
