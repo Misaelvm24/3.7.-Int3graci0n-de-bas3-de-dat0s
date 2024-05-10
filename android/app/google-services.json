@@ -1,21 +1,21 @@
 {
   "project_info": {
-    "project_number": "804456786215",
-    "project_id": "project-7765481086774765519",
-    "storage_bucket": "project-7765481086774765519.appspot.com"
+    "project_number": "951036410510",
+    "project_id": "moviemania-10c14",
+    "storage_bucket": "moviemania-10c14.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:804456786215:android:670ffc9588a7bff3fee102",
+        "mobilesdk_app_id": "1:951036410510:android:8e9a232694d67f372d67df",
         "android_client_info": {
-          "package_name": "com.example.flutter_application_5"
+          "package_name": "com.catalogo.moviemania"
         }
       },
       "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyBIXCTKCwdn54HxUchJiIOyMPkwDCfnmv0"
+          "current_key": "AIzaSyAUlZN6PDVG6Vbotwf8Lv3o-ooPT6klxEE"
         }
       ],
       "services": {

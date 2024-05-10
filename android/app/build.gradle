@@ -1,34 +1,21 @@
 plugins {
-    id "com.android.application"
-    // START: FlutterFire Configuration
-    id 'com.google.gms.google-services'
-    // END: FlutterFire Configuration
-    id "kotlin-android"
-    id "dev.flutter.flutter-gradle-plugin"
-}
-
-def localProperties = new Properties()
-def localPropertiesFile = rootProject.file('local.properties')
-if (localPropertiesFile.exists()) {
-    localPropertiesFile.withReader('UTF-8') { reader ->
-        localProperties.load(reader)
-    }
-}
-
-def flutterVersionCode = localProperties.getProperty('flutter.versionCode')
-if (flutterVersionCode == null) {
-    flutterVersionCode = '1'
-}
-
-def flutterVersionName = localProperties.getProperty('flutter.versionName')
-if (flutterVersionName == null) {
-    flutterVersionName = '1.0'
+    id 'com.android.application'  // Plugin para aplicaciones Android
+    id 'kotlin-android'           // Soporte para Kotlin
+    id 'com.google.gms.google-services'  // Plugin para Google Services (Firebase)
+    id 'dev.flutter.flutter-gradle-plugin'  // Plugin para Flutter
 }
 
 android {
-    namespace "com.example.flutter_application_5"
-    compileSdk flutter.compileSdkVersion
-    ndkVersion flutter.ndkVersion
+    namespace "com.catalogo.MovieMania"  // Nombre de tu paquete
+    compileSdkVersion 33  // Versión recomendada por Flutter
+
+    defaultConfig {
+        applicationId "com.catalogo.MovieMania"  // Asegúrate de usar el nombre correcto
+        minSdkVersion 21  // Versión mínima para Flutter
+        targetSdkVersion 33  // Versión recomendada por Flutter
+        versionCode 1  // Cambia al actualizar la app
+        versionName "1.0"  // Versión visible para el usuario
+    }
 
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
@@ -36,35 +23,27 @@ android {
     }
 
     kotlinOptions {
-        jvmTarget = '1.8'
-    }
-
-    sourceSets {
-        main.java.srcDirs += 'src/main/kotlin'
-    }
-
-    defaultConfig {
-        // TODO: Specify your own unique Application ID (https://developer.android.com/studio/build/application-id.html).
-        applicationId "com.example.flutter_application_5"
-        // You can update the following values to match your application needs.
-        // For more information, see: https://docs.flutter.dev/deployment/android#reviewing-the-gradle-build-configuration.
-        minSdkVersion flutter.minSdkVersion
-        targetSdkVersion flutter.targetSdkVersion
-        versionCode flutterVersionCode.toInteger()
-        versionName flutterVersionName
+        jvmTarget = '1.8'  // Compatibilidad con Kotlin
     }
 
     buildTypes {
         release {
-            // TODO: Add your own signing config for the release build.
-            // Signing with the debug keys for now, so `flutter run --release` works.
-            signingConfig signingConfigs.debug
+            minifyEnabled false  // Para habilitar/inhabilitar optimización
+            signingConfig signingConfigs.debug  // Cambia para producción
         }
     }
 }
 
 flutter {
-    source '../..'
+    source '../..'  // Asegúrate de que apunta a la raíz del proyecto Flutter
 }
 
-dependencies {}
+dependencies {
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7"  // Soporte para Kotlin
+    implementation 'com.google.firebase:firebase-analytics'  // Firebase Analytics
+    implementation 'com.google.firebase:firebase-auth'       // Firebase Auth
+    implementation 'com.google.firebase:firebase-firestore'  // Firebase Firestore
+    implementation 'com.google.firebase:firebase-storage'    // Firebase Storage, si es necesario
+}
+
+apply plugin: 'com.google.gms.google-services'  // Plugin para Google Services

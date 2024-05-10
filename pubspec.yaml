@@ -9,9 +9,10 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  cupertino_icons: ^1.0.6 # Iconos de Cupertino
-  http: ^1.2.1 # Para solicitudes HTTP
-  firebase_core: ^2.30.1 # Necesario para inicializar Firebase
+  firebase_core: ^2.5.0  # Asegúrate de tener la versión compatible con Flutter Web
+  firebase_auth: ^4.5.0  # Otras dependencias necesarias
+  cloud_firestore: ^4.10.0
+  # Y cualquier otro paquete que uses
 
   # Aquí puedes agregar otras dependencias relacionadas con Firebase según tus necesidades.
   # Por ejemplo, para Firestore:
